@@ -14,14 +14,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        timer = new Thread(){
+        timer = new Thread() {
             @Override
-            public void run(){
+            public void run() {
                 try {
-                    synchronized (this){
-                        wait(4000);
+                    synchronized (this) {
+                        wait(3000);
                     }
-                } catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);

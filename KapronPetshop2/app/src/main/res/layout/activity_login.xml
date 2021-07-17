@@ -43,6 +43,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputEmail"
                 style="@style/parent"
+                android:textColorHint="@color/darkTextColor"
                 android:layout_marginTop="@dimen/loginViewsMargin">
                 <EditText
                     android:id="@+id/editTextEmail"
@@ -50,11 +51,12 @@
                     android:hint="@string/login_email_hint"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:textColor="#000"/>
+                    android:textColor="@color/darkTextColor"/>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputPassword"
                 style="@style/parent"
+                android:textColorHint="@color/darkTextColor"
                 android:layout_marginTop="@dimen/loginViewsMargin">
 
                 <EditText

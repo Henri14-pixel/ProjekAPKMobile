@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,45 +17,46 @@
         android:background="@drawable/header"
         android:paddingTop="10dp"
         android:paddingRight="10dp">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/archivo_black"
-            android:textSize="24sp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="52dp"
-            android:textAlignment="center"
-            android:text="KAPRON"
-            android:textColor="#fff"/>
 
         <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/archivo_black"
-            android:textSize="24sp"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="52dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="KAPRON"
             android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="80dp"
+            android:fontFamily="@font/archivo_black"
             android:text="PETSHOP"
-            android:textColor="#fff"/>
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="24sp" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/gambar_3"
             android:layout_marginLeft="175dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/gambar_3" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
         android:layout_marginBottom="5dp"
         android:background="#fff"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
         android:elevation="8dp">
 
         <TextView
@@ -65,415 +65,471 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:text="Search....."
-            android:textColor="#CAC4C4"/>
+            android:textColor="#CAC4C4" />
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_search_24"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_search_24" />
     </RelativeLayout>
 
     <ScrollView
-        android:layout_marginTop="7dp"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp"
+        android:layout_weight="1">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
             <!-- Category -->
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="15dp">
 
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
                     <LinearLayout
-                        android:clickable="true"
-                        android:background="@drawable/category"
-                        android:padding="5dp"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/category"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
                         <ImageView
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="true"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/thumb_food"/>
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:src="@drawable/thumb_food" />
                     </LinearLayout>
+
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Makanan"
-                        android:textColor="#BE7E68"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:textColor="#BE7E68"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <RelativeLayout
                     android:layout_width="20dp"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
+
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
                     <LinearLayout
 
-                        android:clickable="true"
-                        android:background="@drawable/category"
-                        android:padding="5dp"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/category"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
 
                         <ImageView
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="true"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/thumb_cage"/>
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:src="@drawable/thumb_cage" />
                     </LinearLayout>
+
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Kandang"
-                        android:textColor="#BE7E68"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:textColor="#BE7E68"
+                        android:textSize="12sp" />
                 </LinearLayout>
+
                 <RelativeLayout
                     android:layout_width="20dp"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
+
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
                     <LinearLayout
 
-                        android:clickable="true"
-                        android:background="@drawable/category"
-                        android:padding="5dp"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/category"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
 
                         <ImageView
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="true"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/thumb_medicine"/>
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:src="@drawable/thumb_medicine" />
                     </LinearLayout>
+
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Obat"
-                        android:textColor="#BE7E68"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:textColor="#BE7E68"
+                        android:textSize="12sp" />
                 </LinearLayout>
+
                 <RelativeLayout
                     android:layout_width="20dp"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
+
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
                     <LinearLayout
 
-                        android:clickable="true"
-                        android:background="@drawable/category"
-                        android:padding="5dp"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/category"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
 
                         <ImageView
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="true"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/thumb_toy"/>
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:src="@drawable/thumb_toy" />
                     </LinearLayout>
+
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Mainan"
-                        android:textColor="#BE7E68"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:textColor="#BE7E68"
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
             <!-- Product Terbaru -->
             <LinearLayout
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal">
+
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:fontFamily="@font/archivo_black"
                     android:text="Produk Terbaru"
                     android:textColor="#BE7E68"
-                    android:textSize="16sp"/>
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <HorizontalScrollView
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="8dp">
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                     <!-- Card Product -->
                     <LinearLayout
-                        android:clickable="true"
-                        android:layout_marginLeft="15dp"
-                        android:padding="8dp"
-                        android:background="@drawable/new_product"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/new_product"
+                        android:clickable="true"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:cropToPadding="false"
                                     android:adjustViewBounds="true"
-                                    android:src="@drawable/product_1"/>
+                                    android:cropToPadding="false"
+                                    android:src="@drawable/product_1" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_marginLeft="20dp"
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="Whiskas 1,2 Kg"
                                 android:textColor="#000"
-                                android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textSize="12sp" />
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="Rp. 60.000"
-                                android:textStyle="bold"
                                 android:textColor="#000"
                                 android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
+
                     <RelativeLayout
                         android:layout_width="10dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent" />
+
                     <LinearLayout
-                        android:clickable="true"
-                        android:layout_marginLeft="15dp"
-                        android:padding="8dp"
-                        android:background="@drawable/new_product"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/new_product"
+                        android:clickable="true"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:cropToPadding="false"
                                     android:adjustViewBounds="true"
-                                    android:src="@drawable/product_1"/>
+                                    android:cropToPadding="false"
+                                    android:src="@drawable/product_1" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_marginLeft="20dp"
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="Whiskas 1,2 Kg"
                                 android:textColor="#000"
-                                android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textSize="12sp" />
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="Rp. 60.000"
-                                android:textStyle="bold"
                                 android:textColor="#000"
                                 android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
+
                     <RelativeLayout
                         android:layout_width="10dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent" />
+
                     <LinearLayout
-                        android:clickable="true"
-                        android:layout_marginLeft="15dp"
-                        android:padding="8dp"
-                        android:background="@drawable/new_product"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/new_product"
+                        android:clickable="true"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:cropToPadding="false"
                                     android:adjustViewBounds="true"
-                                    android:src="@drawable/product_1"/>
+                                    android:cropToPadding="false"
+                                    android:src="@drawable/product_1" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_marginLeft="20dp"
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="Whiskas 1,2 Kg"
                                 android:textColor="#000"
-                                android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textSize="12sp" />
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="Rp. 60.000"
-                                android:textStyle="bold"
                                 android:textColor="#000"
                                 android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
+
                     <RelativeLayout
                         android:layout_width="10dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent" />
+
                     <LinearLayout
-                        android:clickable="true"
-                        android:layout_marginLeft="15dp"
-                        android:padding="8dp"
-                        android:background="@drawable/new_product"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/new_product"
+                        android:clickable="true"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:cropToPadding="false"
                                     android:adjustViewBounds="true"
-                                    android:src="@drawable/product_1"/>
+                                    android:cropToPadding="false"
+                                    android:src="@drawable/product_1" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_marginLeft="20dp"
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="Whiskas 1,2 Kg"
                                 android:textColor="#000"
-                                android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textSize="12sp" />
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="Rp. 60.000"
-                                android:textStyle="bold"
                                 android:textColor="#000"
                                 android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
+
                     <RelativeLayout
                         android:layout_width="10dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent" />
+
                     <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginRight="10dp"
-                        android:clickable="true"
-                        android:layout_marginLeft="15dp"
-                        android:padding="8dp"
                         android:background="@drawable/new_product"
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:clickable="true"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:cropToPadding="false"
                                     android:adjustViewBounds="true"
-                                    android:src="@drawable/product_1"/>
+                                    android:cropToPadding="false"
+                                    android:src="@drawable/product_1" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_marginLeft="20dp"
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="Whiskas 1,2 Kg"
                                 android:textColor="#000"
-                                android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textSize="12sp" />
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="Rp. 60.000"
-                                android:textStyle="bold"
                                 android:textColor="#000"
                                 android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -481,251 +537,289 @@
 
             <!-- Produk Lainnya -->
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:orientation="horizontal">
+
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:fontFamily="@font/archivo_black"
                     android:text="Produk Lainnya"
                     android:textColor="#BE7E68"
-                    android:textSize="16sp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <!-- Card Produk -->
-                    <LinearLayout
-                    android:layout_marginTop="20dp"
-                    android:onClick="onDetails"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                        <LinearLayout
-                            android:onClick="onDetails"
-                            android:clickable="true"
-                            android:layout_marginLeft="15dp"
-                            android:padding="8dp"
-                            android:background="@drawable/new_product"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:cropToPadding="false"
-                                        android:adjustViewBounds="true"
-                                        android:src="@drawable/product_1"/>
-                                </androidx.cardview.widget.CardView>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_marginLeft="20dp"
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-                                <TextView
-                                    android:layout_marginTop="5dp"
-                                    android:text="Whiskas 1,2 Kg"
-                                    android:textColor="#000"
-                                    android:textSize="12sp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
-                                <TextView
-                                    android:text="Rp. 60.000"
-                                    android:textStyle="bold"
-                                    android:textColor="#000"
-                                    android:textSize="12sp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                    <RelativeLayout
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"/>
-                    <LinearLayout
-                        android:layout_marginTop="20dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <LinearLayout
-                            android:onClick="onDetails"
-                            android:clickable="true"
-                            android:layout_marginRight="15dp"
-                            android:padding="8dp"
-                            android:background="@drawable/new_product"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:cropToPadding="false"
-                                        android:adjustViewBounds="true"
-                                        android:src="@drawable/product_1"/>
-                                </androidx.cardview.widget.CardView>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_marginLeft="20dp"
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-                                <TextView
-                                    android:layout_marginTop="5dp"
-                                    android:text="Whiskas 1,2 Kg"
-                                    android:textColor="#000"
-                                    android:textSize="12sp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
-                                <TextView
-                                    android:text="Rp. 60.000"
-                                    android:textStyle="bold"
-                                    android:textColor="#000"
-                                    android:textSize="12sp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
+                    android:textSize="16sp" />
             </LinearLayout>
+
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_marginBottom="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
                 <!-- Card Produk -->
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:onClick="onDetails"
+                    android:orientation="vertical">
+
                     <LinearLayout
-                        android:onClick="onDetails"
-                        android:clickable="true"
-                        android:layout_marginLeft="15dp"
-                        android:padding="8dp"
-                        android:background="@drawable/new_product"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/new_product"
+                        android:clickable="true"
+                        android:onClick="onDetails"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:cropToPadding="false"
                                     android:adjustViewBounds="true"
-                                    android:src="@drawable/product_1"/>
+                                    android:cropToPadding="false"
+                                    android:src="@drawable/product_1" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_marginLeft="20dp"
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="Whiskas 1,2 Kg"
                                 android:textColor="#000"
-                                android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textSize="12sp" />
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="Rp. 60.000"
-                                android:textStyle="bold"
                                 android:textColor="#000"
                                 android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
                 <RelativeLayout
                     android:layout_width="20dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
+
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
+
                     <LinearLayout
-                        android:onClick="onDetails"
-                        android:clickable="true"
-                        android:layout_marginRight="15dp"
-                        android:padding="8dp"
-                        android:background="@drawable/new_product"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/new_product"
+                        android:clickable="true"
+                        android:onClick="onDetails"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:cropToPadding="false"
                                     android:adjustViewBounds="true"
-                                    android:src="@drawable/product_1"/>
+                                    android:cropToPadding="false"
+                                    android:src="@drawable/product_1" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_marginLeft="20dp"
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="Whiskas 1,2 Kg"
                                 android:textColor="#000"
-                                android:textSize="12sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textSize="12sp" />
+
                             <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="Rp. 60.000"
-                                android:textStyle="bold"
                                 android:textColor="#000"
                                 android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+                <!-- Card Produk -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/new_product"
+                        android:clickable="true"
+                        android:onClick="onDetails"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:src="@drawable/product_1" />
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Whiskas 1,2 Kg"
+                                android:textColor="#000"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Rp. 60.000"
+                                android:textColor="#000"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/new_product"
+                        android:clickable="true"
+                        android:onClick="onDetails"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:src="@drawable/product_1" />
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Whiskas 1,2 Kg"
+                                android:textColor="#000"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Rp. 60.000"
+                                android:textColor="#000"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/item_bottom_home"
-        android:background="@color/primaryTextColor"
         android:layout_width="match_parent"
-        android:layout_height="55dp"/>
+        android:layout_height="55dp"
+        android:background="@color/primaryTextColor"
+        app:itemIconTint="@drawable/tab_color"
+        app:itemTextColor="@drawable/tab_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/item_bottom_home" />
 </LinearLayout>
