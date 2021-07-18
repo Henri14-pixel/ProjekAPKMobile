@@ -55,9 +55,9 @@ public class AdapterUser {
         editor.putString(KEY_ADDRESS, user.getAddress());
         editor.putString(KEY_PHONE, user.getPhone_number());
         editor.putString(KEY_IMAGE, user.getCustomer_image());
-        editor.putInt(KEY_PROV, user.getProvince_id());
-        editor.putInt(KEY_CITY, user.getCity_id());
-        editor.putInt(KEY_SUBDIST, user.getSubdistrict_id());
+        editor.putString(KEY_PROV, user.getProvince_id());
+        editor.putString(KEY_CITY, user.getCity_id());
+        editor.putString(KEY_SUBDIST, user.getSubdistrict_id());
         editor.apply();
     }
 
@@ -79,9 +79,9 @@ public class AdapterUser {
                 sharedPreferences.getString(KEY_ADDRESS, null),
                 sharedPreferences.getString(KEY_PHONE, null),
                 sharedPreferences.getString(KEY_IMAGE, null),
-                sharedPreferences.getInt(KEY_PROV, 0),
-                sharedPreferences.getInt(KEY_CITY, 0),
-                sharedPreferences.getInt(KEY_SUBDIST, 0)
+                sharedPreferences.getString(KEY_PROV, null),
+                sharedPreferences.getString(KEY_CITY, null),
+                sharedPreferences.getString(KEY_SUBDIST, null)
         );
     }
 

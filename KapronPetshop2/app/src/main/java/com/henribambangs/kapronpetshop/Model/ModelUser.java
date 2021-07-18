@@ -1,13 +1,13 @@
 package com.henribambangs.kapronpetshop.Model;
 
 public class ModelUser {
-    private int customer_id, province_id, city_id, subdistrict_id;
-    private String login_id, customer_name, email, gender, address, phone_number, customer_image;
+    private int customer_id;
+    private String login_id, customer_name, email, gender, address, phone_number, customer_image, province_id, city_id, subdistrict_id;
 
     public ModelUser() {
     }
 
-    public ModelUser(int customer_id, String login_id, String customer_name, String email, String gender, String address, String phone_number, String customer_image, int province_id, int city_id, int subdistrict_id) {
+    public ModelUser(int customer_id, String login_id, String customer_name, String email, String gender, String address, String phone_number, String customer_image, String province_id, String city_id, String subdistrict_id) {
         this.customer_id = customer_id;
         this.login_id = login_id;
         this.customer_name = customer_name;
@@ -93,29 +93,29 @@ public class ModelUser {
     }
 
     //--------------------------------//
-    public int getProvince_id() {
+    public String getProvince_id() {
         return province_id;
     }
 
-    public void setProvince_id(int province_id) {
+    public void setProvince_id(String province_id) {
         this.province_id = province_id;
     }
 
     //--------------------------------//
-    public int getCity_id() {
+    public String getCity_id() {
         return city_id;
     }
 
-    public void setCity_id(int city_id) {
+    public void setCity_id(String city_id) {
         this.city_id = city_id;
     }
 
     //--------------------------------//
-    public int getSubdistrict_id() {
+    public String getSubdistrict_id() {
         return subdistrict_id;
     }
 
-    public void setSubdistrict_id(int subdistrict_id) {
+    public void setSubdistrict_id(String subdistrict_id) {
         this.subdistrict_id = subdistrict_id;
     }
 }

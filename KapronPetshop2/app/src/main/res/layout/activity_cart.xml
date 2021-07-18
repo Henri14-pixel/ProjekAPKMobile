@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,313 +9,187 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical"
     tools:context=".CartActivity">
+
     <RelativeLayout
-        android:background="#FFF"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="55dp"
+        android:background="#FFF">
+
         <ImageView
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="10dp"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:onClick="backHome"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="9dp"
             android:text="Keranjang"
             android:textColor="#000"
-            android:textSize="24sp"
-            android:layout_marginTop="9dp"
-            android:layout_marginLeft="50dp"/>
+            android:textSize="24sp" />
     </RelativeLayout>
+
     <ScrollView
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:background="#FFF">
+                android:background="#FFF"
+                android:padding="10dp">
+
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_margin="5dp"
-                    android:src="@drawable/ic_lokasi"/>
+                    android:src="@drawable/ic_lokasi" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:text="Alamat Pengiriman :"
-                    android:textColor="#000"/>
+                    android:textColor="#000" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="55dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="55dp"
                     android:layout_marginBottom="10dp"
                     android:text="Jl. Cendrawasih No. 25 Kebonagung, Kec. Kebonagung Kab. Jember"
-                    android:textColor="#000"/>
+                    android:textColor="#000" />
             </RelativeLayout>
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="#FFF">
+                    android:background="#FFF"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_baseline_check_box_outline_blank_24"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"/>
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_baseline_check_box_outline_blank_24" />
+
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:src="@drawable/product2"/>
+                        android:src="@drawable/product2" />
+
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#fff">
+                        android:layout_marginTop="5dp"
+                        android:background="#fff"
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="30dp"
                             android:text="Whiskas For Child Cat - 85 gr - Tuna dan White Fish"
-                            android:textSize="14dp"
-                            android:textColor="#000"/>
+                            android:textColor="#000"
+                            android:textSize="14dp" />
+
                         <TextView
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="Rp. 25,000"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
                             android:textColor="#000"
-                            android:layout_width="130dp"
-                            android:layout_height="wrap_content"/>
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp">
+                            android:layout_marginRight="15dp"
+                            android:layout_gravity="right"
+                            android:orientation="horizontal">
+
                             <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_baseline_delete_24"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="45dp"
                                 android:layout_marginTop="15dp"
-                                android:layout_marginLeft="45dp"/>
+                                android:src="@drawable/ic_baseline_delete_24" />
+
                             <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_baseline_add_circle_outline_24"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="15dp"
                                 android:layout_marginBottom="10dp"
-                                android:layout_marginTop="15dp"
-                                android:foregroundGravity="center"/>
+                                android:foregroundGravity="center"
+                                android:src="@drawable/ic_baseline_add_circle_outline_24" />
+
                             <TextView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
                                 android:text="1"
                                 android:textColor="#000"
-                                android:layout_marginTop="10dp"
-                                android:textSize="24sp"
-                                android:gravity="center"/>
+                                android:textSize="24sp" />
+
                             <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_baseline_remove_circle_outline_24"
-                                android:layout_marginBottom="10dp"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
                                 android:layout_marginLeft="7dp"
                                 android:layout_marginTop="15dp"
-                                android:foregroundGravity="center"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="#FFF">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_baseline_check_box_outline_blank_24"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"/>
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="5dp"
-                        android:src="@drawable/product2"/>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_marginTop="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#fff">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="30dp"
-                            android:text="Whiskas For Child Cat - 85 gr - Tuna dan White Fish"
-                            android:textSize="14dp"
-                            android:textColor="#000"/>
-                        <TextView
-                            android:layout_marginTop="5dp"
-                            android:text="Rp. 25,000"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:layout_width="130dp"
-                            android:layout_height="wrap_content"/>
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp">
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_baseline_delete_24"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginLeft="45dp"/>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_baseline_add_circle_outline_24"
                                 android:layout_marginBottom="10dp"
-                                android:layout_marginTop="15dp"
-                                android:foregroundGravity="center"/>
-                            <TextView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:text="1"
-                                android:textColor="#000"
-                                android:layout_marginTop="10dp"
-                                android:textSize="24sp"
-                                android:gravity="center"/>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_baseline_remove_circle_outline_24"
-                                android:layout_marginBottom="10dp"
-                                android:layout_marginLeft="7dp"
-                                android:layout_marginTop="15dp"
-                                android:foregroundGravity="center"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="#FFF">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_baseline_check_box_outline_blank_24"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"/>
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="5dp"
-                        android:src="@drawable/product2"/>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_marginTop="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#fff">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="30dp"
-                            android:text="Whiskas For Child Cat - 85 gr - Tuna dan White Fish"
-                            android:textSize="14dp"
-                            android:textColor="#000"/>
-                        <TextView
-                            android:layout_marginTop="5dp"
-                            android:text="Rp. 25,000"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:layout_width="130dp"
-                            android:layout_height="wrap_content"/>
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp">
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_baseline_delete_24"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginLeft="45dp"/>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_baseline_add_circle_outline_24"
-                                android:layout_marginBottom="10dp"
-                                android:layout_marginTop="15dp"
-                                android:foregroundGravity="center"/>
-                            <TextView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:text="1"
-                                android:textColor="#000"
-                                android:layout_marginTop="10dp"
-                                android:textSize="24sp"
-                                android:gravity="center"/>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_baseline_remove_circle_outline_24"
-                                android:layout_marginBottom="10dp"
-                                android:layout_marginLeft="7dp"
-                                android:layout_marginTop="15dp"
-                                android:foregroundGravity="center"/>
+                                android:foregroundGravity="center"
+                                android:src="@drawable/ic_baseline_remove_circle_outline_24" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FFF">
+                    android:background="#FFF"
+                    android:orientation="vertical">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
                         android:text="Pengiriman"
                         android:textColor="#000"
-                        android:textSize="18sp"
-                        android:layout_marginLeft="15dp"/>
+                        android:textSize="18sp" />
+
                     <Button
                         android:id="@+id/button"
                         android:layout_width="340dp"
@@ -328,172 +201,197 @@
                         android:drawablePadding="8dp"
                         android:text="Pilih Pengiriman"
                         android:textColor="#000"
-                        android:theme="@style/button"/>
+                        android:theme="@style/button" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#FFF">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:textSize="18sp"
                         android:text="Metode Pembayaran"
-                        android:textColor="#000"/>
+                        android:textColor="#000"
+                        android:textSize="18sp" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FFF">
+                    android:background="#FFF"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="20dp"
-                        android:src="@drawable/image2"/>
+                        android:src="@drawable/image2" />
+
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#fff">
+                        android:layout_marginTop="5dp"
+                        android:background="#fff"
+                        android:orientation="horizontal">
+
                         <TextView
-                            android:layout_marginTop="15dp"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
                             android:text="Ovo Cash"
-                            android:textSize="20sp"
                             android:textColor="#000"
-                            android:layout_width="130dp"
-                            android:layout_height="wrap_content"/>
+                            android:textSize="20sp" />
+
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_baseline_radio_button"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="70dp"/>
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/ic_baseline_radio_button" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FFF">
+                    android:background="#FFF"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="20dp"
-                        android:src="@drawable/mandiri"/>
+                        android:src="@drawable/mandiri" />
+
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#fff">
+                        android:layout_marginTop="5dp"
+                        android:background="#fff"
+                        android:orientation="horizontal">
+
                         <TextView
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="20dp"
-                            android:text="Bank Mandiri"
-                            android:textSize="20sp"
-                            android:textColor="#000"
                             android:layout_width="180dp"
-                            android:layout_height="wrap_content"/>
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_baseline_radio_button"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="15dp"
-                            android:layout_marginLeft="20dp"/>
+                            android:text="Bank Mandiri"
+                            android:textColor="#000"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/ic_baseline_radio_button" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FFF">
+                    android:background="#FFF"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="20dp"
-                        android:src="@drawable/bni"/>
+                        android:src="@drawable/bni" />
+
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#fff">
+                        android:layout_marginTop="5dp"
+                        android:background="#fff"
+                        android:orientation="horizontal">
+
                         <TextView
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="20dp"
-                            android:text="Bank BNI"
-                            android:textSize="20sp"
-                            android:textColor="#000"
                             android:layout_width="130dp"
-                            android:layout_height="wrap_content"/>
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_baseline_radio_button"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="15dp"
-                            android:layout_marginLeft="70dp"/>
+                            android:text="Bank BNI"
+                            android:textColor="#000"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/ic_baseline_radio_button" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <RelativeLayout
-        android:background="@color/primaryTextColor"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:background="@color/primaryTextColor"
         android:gravity="center_vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
-                android:layout_marginLeft="210dp"
                 android:layout_width="170dp"
                 android:layout_height="45dp"
-                android:background="@drawable/details"/>
+                android:layout_marginLeft="210dp"
+                android:background="@drawable/details" />
+
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="245dp"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:text="Check Out"
-                android:textSize="16sp"
                 android:textColor="#C49572"
-                android:textStyle="bold"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
                     android:text="Total Harga :"
                     android:textColor="#FFF"
-                    android:layout_marginLeft="25dp"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
                     android:text="Rp. 75,000"
                     android:textColor="#FFF"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="25dp"/>
+                    android:textSize="20sp" />
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>

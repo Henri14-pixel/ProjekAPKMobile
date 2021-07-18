@@ -96,7 +96,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
     private void userLogin() {
         pd.setMessage("Authentication");
         pd.setCancelable(false);
@@ -115,7 +114,6 @@ public class LoginActivity extends AppCompatActivity {
 
                         try {
                             //converting response to json object
-                            Log.e("anyText",response);
                             JSONObject obj = new JSONObject(response);
 
                             //if no error in response
@@ -135,9 +133,9 @@ public class LoginActivity extends AppCompatActivity {
                                         userJson.getString("address"),
                                         userJson.getString("phone_number"),
                                         userJson.getString("customer_image"),
-                                        userJson.getInt("province_id"),
-                                        userJson.getInt("city_id"),
-                                        userJson.getInt("subdistrict_id")
+                                        userJson.getString("province_id"),
+                                        userJson.getString("city_id"),
+                                        userJson.getString("subdistrict_id")
                                 );
 
                                 //storing the user in shared preferences
