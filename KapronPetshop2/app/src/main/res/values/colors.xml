@@ -13,5 +13,6 @@
     <color name="button_active">#FFF6F0</color>
     <color name="whiteTextColor">#fcfcfc</color>
     <color name="primaryTextColor">#C49572</color>
+    <color name="button">#f4f4f4</color>
 
 </resources>
