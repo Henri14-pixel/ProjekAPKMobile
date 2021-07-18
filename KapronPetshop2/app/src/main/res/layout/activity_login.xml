@@ -14,8 +14,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:paddingTop="20dp">
         <LinearLayout
@@ -84,7 +82,8 @@
                 app:initialCornerAngle="27dp"
                 app:spinning_bar_color="#fcfcfc"
                 app:spinning_bar_padding="6dp"
-                app:spinning_bar_width="4dp" />
+                app:spinning_bar_width="4dp"
+                tools:ignore="OnClick" />
             <TextView
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin"
