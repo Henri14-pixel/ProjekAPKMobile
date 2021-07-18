@@ -11,7 +11,6 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -80,6 +79,10 @@ public class RegisterActivity extends AppCompatActivity {
                     temp = false;
                 } else if (TextUtils.isEmpty(pass)) {
                     editTextPassword.setError("Password Tidak Boleh Kosong");
+                    editTextPassword.requestFocus();
+                    temp = false;
+                } else if (pass.length() < 6) {
+                    editTextPassword.setError("Password minimal terdiri dari 6 karakter");
                     editTextPassword.requestFocus();
                     temp = false;
                 } else if (!pass.equals(cpass)) {
