@@ -2,12 +2,12 @@ package com.henribambangs.kapronpetshop.Model;
 
 public class ModelUser {
     private int customer_id;
-    private String login_id, customer_name, email, gender, address, phone_number, customer_image, province_id, city_id, subdistrict_id;
+    private String login_id, customer_name, email, gender, address, phone_number, customer_image, province_id, city_id, subdistrict_id, province_name, city_name, subdistrict_name;
 
     public ModelUser() {
     }
 
-    public ModelUser(int customer_id, String login_id, String customer_name, String email, String gender, String address, String phone_number, String customer_image, String province_id, String city_id, String subdistrict_id) {
+    public ModelUser(int customer_id, String login_id, String customer_name, String email, String gender, String address, String phone_number, String customer_image, String province_id, String city_id, String subdistrict_id, String province_name, String city_name, String subdistrict_name) {
         this.customer_id = customer_id;
         this.login_id = login_id;
         this.customer_name = customer_name;
@@ -19,6 +19,9 @@ public class ModelUser {
         this.province_id = province_id;
         this.city_id = city_id;
         this.subdistrict_id = subdistrict_id;
+        this.province_name = province_name;
+        this.city_name = city_name;
+        this.subdistrict_name = subdistrict_name;
     }
 
     //--------------------------------//
@@ -83,6 +86,7 @@ public class ModelUser {
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
+
     //--------------------------------//
     public String getCustomer_image() {
         return customer_image;
@@ -117,6 +121,33 @@ public class ModelUser {
 
     public void setSubdistrict_id(String subdistrict_id) {
         this.subdistrict_id = subdistrict_id;
+    }
+
+    //--------------------------------//
+    public String getProvince_name() {
+        return province_name;
+    }
+
+    public void setProvince_name(String province_name) {
+        this.province_name = province_name;
+    }
+
+    //--------------------------------//
+    public String getCity_name() {
+        return city_name;
+    }
+
+    public void setCity_name(String city_name) {
+        this.city_name = city_name;
+    }
+
+    //--------------------------------//
+    public String getSubdistrict_name() {
+        return subdistrict_name;
+    }
+
+    public void setSubdistrict_name(String subdistrict_name) {
+        this.subdistrict_name = subdistrict_name;
     }
 }
 

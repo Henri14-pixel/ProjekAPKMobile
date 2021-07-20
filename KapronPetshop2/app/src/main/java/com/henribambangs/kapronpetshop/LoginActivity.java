@@ -135,7 +135,10 @@ public class LoginActivity extends AppCompatActivity {
                                         userJson.getString("customer_image"),
                                         userJson.getString("province_id"),
                                         userJson.getString("city_id"),
-                                        userJson.getString("subdistrict_id")
+                                        userJson.getString("subdistrict_id"),
+                                        userJson.getString("province_name"),
+                                        userJson.getString("city_name"),
+                                        userJson.getString("subdistrict_name")
                                 );
 
                                 //storing the user in shared preferences

@@ -14,5 +14,6 @@
     <color name="whiteTextColor">#fcfcfc</color>
     <color name="primaryTextColor">#C49572</color>
     <color name="button">#f4f4f4</color>
+    <color name="button1">#C49572</color>
 
 </resources>

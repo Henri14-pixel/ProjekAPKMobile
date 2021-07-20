@@ -25,6 +25,9 @@ public class AdapterUser {
     private static final String KEY_PROV = "KEY_PROV";
     private static final String KEY_CITY = "KEY_CITY";
     private static final String KEY_SUBDIST = "KEY_SUBDIST";
+    private static final String KEY_PROVNAME = "KEY_PROVNAME";
+    private static final String KEY_CITYNAME = "KEY_CITYNAME";
+    private static final String KEY_SUBDISTNAME = "KEY_SUBDISTNAME";
 
     @SuppressLint("StaticFieldLeak")
     private static AdapterUser mInstance;
@@ -58,6 +61,9 @@ public class AdapterUser {
         editor.putString(KEY_PROV, user.getProvince_id());
         editor.putString(KEY_CITY, user.getCity_id());
         editor.putString(KEY_SUBDIST, user.getSubdistrict_id());
+        editor.putString(KEY_PROVNAME, user.getProvince_name());
+        editor.putString(KEY_CITYNAME, user.getCity_name());
+        editor.putString(KEY_SUBDISTNAME, user.getSubdistrict_name());
         editor.apply();
     }
 
@@ -81,7 +87,10 @@ public class AdapterUser {
                 sharedPreferences.getString(KEY_IMAGE, null),
                 sharedPreferences.getString(KEY_PROV, null),
                 sharedPreferences.getString(KEY_CITY, null),
-                sharedPreferences.getString(KEY_SUBDIST, null)
+                sharedPreferences.getString(KEY_SUBDIST, null),
+                sharedPreferences.getString(KEY_PROVNAME, null),
+                sharedPreferences.getString(KEY_CITYNAME, null),
+                sharedPreferences.getString(KEY_SUBDISTNAME, null)
         );
     }
 

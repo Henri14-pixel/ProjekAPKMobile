@@ -2,4 +2,9 @@
     <string name="app_name">Kapron Petshop</string>
     <string name="login_email_hint">E-mail</string>
     <string name="login_password_hint">Password</string>
+    <string name="phone_hint">Number Phone</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="kabupaten">Kabupaten</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="alamat">Alamat Lengkap</string>
 </resources>

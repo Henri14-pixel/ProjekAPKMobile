@@ -37,6 +37,10 @@ public class DashboardActivity extends AppCompatActivity {
                         Intent Cart = new Intent(DashboardActivity.this, CartActivity.class);
                         startActivity(Cart);
                         break;
+                    case R.id.navProfile:
+                        Intent Profile = new Intent(DashboardActivity.this, ProfileActivity.class);
+                        startActivity(Profile);
+                        break;
                 }
 
                 return true;

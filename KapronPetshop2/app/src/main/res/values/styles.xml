@@ -29,10 +29,11 @@
     <style name="parent">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/darkTextColor</item>
     </style>
 
     <style name="modifiedEditText" parent="parent">
-        <item name="android:textSize">@dimen/newsMoreTextSize</item>
+        <item name="android:textSize">@dimen/textInput</item>
         <item name="android:backgroundTint">@color/primaryTextColor</item>
     </style>
 
@@ -51,4 +52,10 @@
     <style name="button" parent="Theme.AppCompat.Light">
         <item name="colorButtonNormal">@color/button</item>
     </style>
+
+    <style parent="Theme.AppCompat.Light" name="button1">
+
+    <item name="colorButtonNormal">@color/button1</item>
+
+</style>
 </resources>
