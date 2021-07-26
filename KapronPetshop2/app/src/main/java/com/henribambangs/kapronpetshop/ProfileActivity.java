@@ -3,12 +3,15 @@ package com.henribambangs.kapronpetshop;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        changeStatusBarColor();
 
         BottomNavigationView mBottomNavigation;
 
@@ -79,7 +83,6 @@ public class ProfileActivity extends AppCompatActivity {
         alamat = (TextView) findViewById(R.id.textAlamat);
         daerah = (TextView) findViewById(R.id.textDaerah);
         image = findViewById(R.id.imgProfil);
-
 
         //getting the current user
         ModelUser user = AdapterUser.getInstance(this).getUser();
@@ -137,6 +140,15 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void changeStatusBarColor() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            // window.setStatusBarColor(Color.TRANSPARENT);
+            window.setStatusBarColor(getResources().getColor(R.color.register_bk_color));
+        }
     }
 
     public void onBack(View view) {

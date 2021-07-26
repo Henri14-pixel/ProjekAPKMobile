@@ -3,12 +3,15 @@ package com.henribambangs.kapronpetshop;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -56,6 +59,7 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        changeStatusBarColor();
 
         search = findViewById(R.id.productSearch);
 
@@ -136,7 +140,7 @@ public class DashboardActivity extends AppCompatActivity {
         loadProduct();
 
         mManager = new GridLayoutManager(
-                DashboardActivity.this, 2
+                DashboardActivity.this, 3
         );
 
         mRecyclerview.setLayoutManager(mManager);
@@ -253,4 +257,12 @@ public class DashboardActivity extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(reqData);
     }
 
+    private void changeStatusBarColor() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            // window.setStatusBarColor(Color.TRANSPARENT);
+            window.setStatusBarColor(getResources().getColor(R.color.register_bk_color));
+        }
+    }
 }

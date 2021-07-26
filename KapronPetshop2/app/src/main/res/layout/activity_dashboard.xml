@@ -21,43 +21,43 @@
             android:orientation="vertical">
 
             <!-- NAVIGASI BAR -->
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:background="@drawable/header"
-                android:paddingTop="10dp"
-                android:paddingRight="10dp">
+                android:gravity="start"
+                android:orientation="horizontal">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="52dp"
-                    android:fontFamily="@font/archivo_black"
-                    android:text="KAPRON"
-                    android:textAlignment="center"
-                    android:textColor="#fff"
-                    android:textSize="24sp" />
+                    android:layout_height="match_parent"
+                    android:gravity="start">
 
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="80dp"
-                    android:fontFamily="@font/archivo_black"
-                    android:text="PETSHOP"
-                    android:textAlignment="center"
-                    android:textColor="#fff"
-                    android:textSize="24sp" />
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/archivo_black"
+                        android:gravity="center"
+                        android:text="KAPRON PETSHOP"
+                        android:textAlignment="center"
+                        android:textColor="#fff"
+                        android:textSize="24sp" />
+                </LinearLayout>
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="175dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/gambar_3" />
-            </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="end">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="3dp"
+                        android:src="@drawable/gambar_3" />
+                </LinearLayout>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -111,8 +111,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:scrollbars="none"
-                android:fillViewport="true">
+                android:fillViewport="true"
+                android:scrollbars="none">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -121,10 +121,10 @@
                     <!-- Kategori -->
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerviewTempCategory"
-                        android:orientation="horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:orientation="horizontal"
                         android:scrollbars="horizontal" />
 
                 </RelativeLayout>
