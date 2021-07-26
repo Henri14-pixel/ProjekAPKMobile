@@ -10,18 +10,28 @@
     android:orientation="vertical"
     tools:context=".DetailsActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#FFF">
+        android:layout_height="wrap_content"
+        android:background="@color/whiteTextColor"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp">
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:onClick="onBack"
             android:src="@drawable/ic_baseline_arrow_back_ios_24" />
-    </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            android:text="Detail Produk"
+            android:textColor="@color/gray_800"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -48,6 +58,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
+                            android:id="@id/productImage"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
@@ -65,65 +76,58 @@
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/productName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Whiskas Adult 1,2 Kg - Tuna - Makanan Kucing Dewasa"
+                        android:textColor="@color/gray_900"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/productPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
                         android:text="Rp. 60.000"
-                        android:textColor="#000"
+                        android:textColor="@color/bootstrap_blue"
                         android:textSize="32dp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:id="@+id/productCategory"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:text="Whiskas Adult 1,2 Kg - Tuna - Makanan Kucing Dewasa"
-                        android:textColor="#000"
-                        android:textSize="18dp" />
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:text="Category : "
+                        android:textColor="@color/gray_800"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/productWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:text="Berat : "
+                        android:textColor="@color/gray_800"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/productStock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:text="Stock : "
+                        android:textColor="@color/gray_800"
+                        android:textSize="14dp" />
 
                 </LinearLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#fff"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:text="Terjual 15"
-                        android:textColor="#000"
-                        android:textSize="12dp" />
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="60dp"
-                        android:src="@drawable/ic_baseline_arrow_left_24" />
-
-                    <TextView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="35dp"
-                        android:text="1"
-                        android:textAlignment="center"
-                        android:textColor="#000" />
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/ic_baseline_arrow_right_24" />
-                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -136,8 +140,9 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Deksripsi"
-                        android:textColor="#000"
-                        android:textSize="22dp" />
+                        android:textColor="@color/gray_900"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -145,11 +150,14 @@
                         android:layout_marginTop="40dp">
 
                         <TextView
+                            android:id="@+id/productDescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
+                            android:textSize="14sp"
                             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
-                            android:textColor="#000" />
+                            android:textColor="@color/gray_800"
+                            android:justificationMode="inter_word" />
                     </RelativeLayout>
                 </RelativeLayout>
             </LinearLayout>
@@ -171,15 +179,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="start">
+
                 <Button
-                    android:id="@+id/btnBeli"
+                    android:id="@+id/btnKeranjang"
                     android:layout_width="140dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
-                    android:backgroundTint="@color/whiteTextColor"
-                    android:text="beli"
-                    android:drawableLeft="@drawable/ic_baseline_shopping_cart_24"
-                    android:textColor="@color/darkTextColor"/>
+                    android:backgroundTint="@color/light"
+                    android:drawableLeft="@drawable/ic_baseline_add_24"
+                    android:text="Keranjang"
+                    android:textColor="@color/darkTextColor" />
             </LinearLayout>
 
             <LinearLayout
@@ -188,14 +197,14 @@
                 android:gravity="end">
 
                 <Button
-                    android:id="@+id/btnKeranjang"
+                    android:id="@+id/btnBeli"
                     android:layout_width="140dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="20dp"
-                    android:backgroundTint="@color/whiteTextColor"
-                    android:text="Keranjang"
-                    android:drawableLeft="@drawable/ic_baseline_add_24"
-                    android:textColor="@color/darkTextColor"/>
+                    android:backgroundTint="@color/light"
+                    android:drawableLeft="@drawable/ic_baseline_shopping_cart_24"
+                    android:text="beli"
+                    android:textColor="@color/darkTextColor" />
             </LinearLayout>
 
         </LinearLayout>

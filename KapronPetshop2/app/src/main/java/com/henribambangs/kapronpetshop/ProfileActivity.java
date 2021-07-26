@@ -6,13 +6,17 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.henribambangs.kapronpetshop.Adapter.AdapterUser;
 import com.henribambangs.kapronpetshop.Model.ModelUser;
 import com.henribambangs.kapronpetshop.Util.HttpsTrustManager;
@@ -31,6 +35,35 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        BottomNavigationView mBottomNavigation;
+
+        mBottomNavigation = findViewById(R.id.bottom_navigation);
+
+        Menu menu = mBottomNavigation.getMenu();
+        menu.findItem(R.id.navProfile).setChecked(true);
+
+        mBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navHome:
+                        Intent Home = new Intent(ProfileActivity.this, DashboardActivity.class);
+                        startActivity(Home);
+                        break;
+                    case R.id.navCart:
+                        Intent Cart = new Intent(ProfileActivity.this, CartActivity.class);
+                        startActivity(Cart);
+                        break;
+                    case R.id.navProfile:
+                        Intent Profile = new Intent(ProfileActivity.this, ProfileActivity.class);
+                        startActivity(Profile);
+                        break;
+                }
+
+                return true;
+            }
+        });
 
         //if the user is not logged in
         //starting the login activity
