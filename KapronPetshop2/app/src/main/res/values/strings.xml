@@ -7,4 +7,7 @@
     <string name="kabupaten">Kabupaten</string>
     <string name="kecamatan">Kecamatan</string>
     <string name="alamat">Alamat Lengkap</string>
+    <string name="alamat_pengiriman"><u>Alamat Pengiriman</u></string>
+    <string name="daerah_pengiriman"><u>Daerah Pengiriman</u></string>
+    <string name="image_chooser">File Chooser</string>
 </resources>

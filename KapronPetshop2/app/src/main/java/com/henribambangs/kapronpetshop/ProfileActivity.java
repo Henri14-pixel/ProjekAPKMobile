@@ -52,6 +52,7 @@ public class ProfileActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navHome:
+                        finish();
                         Intent Home = new Intent(ProfileActivity.this, DashboardActivity.class);
                         startActivity(Home);
                         break;

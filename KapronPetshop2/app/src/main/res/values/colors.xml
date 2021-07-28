@@ -22,7 +22,8 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
 
-    // Colour Palette
+
+    <!--Colour Palette-->
     <color name="bootstrap_blue">#0d6efd</color>
     <color name="bootstrap_indigo">#6610f2</color>
     <color name="bootstrap_purple">#6f42c1</color>
@@ -34,7 +35,8 @@
     <color name="bootstrap_teal">#20c997</color>
     <color name="bootstrap_cyan">#0dcaf0</color>
 
-    // Dark Colour
+
+    <!--Dark Colour-->
     <color name="white">#fff</color>
     <color name="light">#f8f9fa</color>
     <color name="gray_100">#f8f9fa</color>
@@ -48,4 +50,15 @@
     <color name="gray_900">#212529</color>
     <color name="black">#FF000000</color>
 
+
+    <!--other color-->
+    <color name="txt_price_color">#0AAC3A</color>
+    <color name="ripple_color">#dfdfdf</color>
+    <color name="green">#0ecf48</color>
+    <color name="grey">#999999</color>
+    <color name="grey_soft">#ededed</color>
+    <color name="separator">#efefef</color>
+    <color name="hint">#767676</color>
+    <color name="available">#ef6c00</color>
+    <color name="sold">#767676</color>
 </resources>

@@ -24,12 +24,12 @@
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
                 android:onClick="onBack"
-                android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+                android:src="@drawable/ic_baseline_arrow_back_ios_24_dark"/>
             <TextView
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:text="Edit Data Diri"
-                android:textColor="#2C2E43"
+                android:textColor="@color/gray_900"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"

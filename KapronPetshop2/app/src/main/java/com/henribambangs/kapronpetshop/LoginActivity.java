@@ -141,7 +141,8 @@ public class LoginActivity extends AppCompatActivity {
                                         userJson.getString("subdistrict_id"),
                                         userJson.getString("province_name"),
                                         userJson.getString("city_name"),
-                                        userJson.getString("subdistrict_name")
+                                        userJson.getString("subdistrict_name"),
+                                        password
                                 );
 
                                 //storing the user in shared preferences
@@ -161,6 +162,7 @@ public class LoginActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        pd.cancel();
                         Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }) {

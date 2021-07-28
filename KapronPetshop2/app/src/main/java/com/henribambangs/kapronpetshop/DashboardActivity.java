@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -40,19 +39,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class DashboardActivity extends AppCompatActivity {
     RecyclerView mRecyclerview, mRecyclerviewCategory;
-    RecyclerView.Adapter mAdapter, mAdapterCategory;
+    static RecyclerView.Adapter mAdapter;
+    RecyclerView.Adapter mAdapterCategory;
     RecyclerView.LayoutManager mManager, mManagerCategory;
-    List<ModelProductList> mItems;
+    static List<ModelProductList> mItems;
     List<ModelProductCategory> mItemsCategory;
-    ProgressDialog pd;
+    static ProgressDialog pd;
     EditText search;
-    String intent_category, intent_search, URL;
+    private static String URL;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -61,33 +59,41 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
         changeStatusBarColor();
 
+        // search
         search = findViewById(R.id.productSearch);
 
-        // Intent Data
-        Intent data = getIntent();
-        intent_search = data.getStringExtra("search");
-        intent_category = data.getStringExtra("idCategory");
-
-        // Set Get
-        if (intent_search != null) {
-            URL = ServerAPI.URL_PRODUCTLIST + "?search=" + intent_search;
-            search.setText(intent_search);
-        } else if (intent_category != null) {
-            URL = ServerAPI.URL_PRODUCTLIST + "?kategori=" + intent_category;
-        } else {
-            URL = ServerAPI.URL_PRODUCTLIST;
-        }
+        // Base URL
+        URL = ServerAPI.URL_PRODUCTLIST;
 
         // Edit Text Search Listener
+        search.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Set Get
+                    if (search.getText().toString() != null) {
+                        URL = ServerAPI.URL_PRODUCTLIST + "?search=" + search.getText().toString();
+                        loadProduct();
+                    } else {
+                        URL = ServerAPI.URL_PRODUCTLIST;
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 boolean handled = false;
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    Intent update = new Intent(DashboardActivity.this, DashboardActivity.class);
-                    update.putExtra("search", search.getText().toString());
-
-                    startActivity(update);
+                    // Set Get
+                    if (search.getText().toString() != null) {
+                        URL = ServerAPI.URL_PRODUCTLIST + "?search=" + search.getText().toString();
+                        loadProduct();
+                    } else {
+                        URL = ServerAPI.URL_PRODUCTLIST;
+                    }
 
                     handled = true;
                 }
@@ -106,10 +112,13 @@ public class DashboardActivity extends AppCompatActivity {
 
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (event.getRawX() >= (search.getRight() - search.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-                        Intent update = new Intent(DashboardActivity.this, DashboardActivity.class);
-                        update.putExtra("search", search.getText().toString());
-
-                        startActivity(update);
+                        // Set Get
+                        if (search.getText().toString() != null) {
+                            URL = ServerAPI.URL_PRODUCTLIST + "?search=" + search.getText().toString();
+                            loadProduct();
+                        } else {
+                            URL = ServerAPI.URL_PRODUCTLIST;
+                        }
 
                         return true;
                     }
@@ -164,8 +173,12 @@ public class DashboardActivity extends AppCompatActivity {
                         Intent Cart = new Intent(DashboardActivity.this, CartActivity.class);
                         startActivity(Cart);
                         break;
+                    case R.id.navHistory:
+                        Intent History = new Intent(DashboardActivity.this, HistoryActivity.class);
+                        startActivity(History);
+                        break;
                     case R.id.navProfile:
-                        Intent Profile = new Intent(DashboardActivity.this, ProfileActivity.class);
+                        Intent Profile = new Intent(DashboardActivity.this, AppProfileActivity.class);
                         startActivity(Profile);
                         break;
                 }
@@ -176,10 +189,12 @@ public class DashboardActivity extends AppCompatActivity {
 
     }
 
-    private void loadProduct() {
+    private static void loadProduct() {
         pd.setMessage("Sedang Memuat Produk");
         pd.setCancelable(false);
         pd.show();
+
+        mItems.clear();
 
         JsonArrayRequest reqData = new JsonArrayRequest(Request.Method.POST, URL,
                 null, new Response.Listener<JSONArray>() {
@@ -264,5 +279,10 @@ public class DashboardActivity extends AppCompatActivity {
             // window.setStatusBarColor(Color.TRANSPARENT);
             window.setStatusBarColor(getResources().getColor(R.color.register_bk_color));
         }
+    }
+
+    public static void setURL(String newURL){
+        URL = newURL;
+        loadProduct();
     }
 }

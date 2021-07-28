@@ -20,6 +20,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppThemeWhite" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/light</item>
+        <item name="colorPrimaryDark">@color/gray_300</item>
+        <item name="colorAccent">@color/bootstrap_teal</item>
+    </style>
+
     <style name="viewParent">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

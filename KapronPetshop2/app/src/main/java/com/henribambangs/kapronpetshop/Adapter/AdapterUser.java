@@ -28,6 +28,7 @@ public class AdapterUser {
     private static final String KEY_PROVNAME = "KEY_PROVNAME";
     private static final String KEY_CITYNAME = "KEY_CITYNAME";
     private static final String KEY_SUBDISTNAME = "KEY_SUBDISTNAME";
+    private static final String KEY_PW = "PW";
 
     @SuppressLint("StaticFieldLeak")
     private static AdapterUser mInstance;
@@ -64,6 +65,7 @@ public class AdapterUser {
         editor.putString(KEY_PROVNAME, user.getProvince_name());
         editor.putString(KEY_CITYNAME, user.getCity_name());
         editor.putString(KEY_SUBDISTNAME, user.getSubdistrict_name());
+        editor.putString(KEY_PW, user.getLogin_pw());
         editor.apply();
     }
 
@@ -90,16 +92,25 @@ public class AdapterUser {
                 sharedPreferences.getString(KEY_SUBDIST, null),
                 sharedPreferences.getString(KEY_PROVNAME, null),
                 sharedPreferences.getString(KEY_CITYNAME, null),
-                sharedPreferences.getString(KEY_SUBDISTNAME, null)
+                sharedPreferences.getString(KEY_SUBDISTNAME, null),
+                sharedPreferences.getString(KEY_PW, null)
         );
     }
 
-    //this method will logout the user
-    public void logout() {
+    public void clearData() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.apply();
+        editor.commit();
+    }
+
+    public void logout() {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+        editor.commit();
         mCtx.startActivity(new Intent(mCtx, LoginActivity.class));
     }
 }

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.henribambangs.kapronpetshop.DashboardActivity;
 import com.henribambangs.kapronpetshop.Model.ModelProductCategory;
 import com.henribambangs.kapronpetshop.R;
+import com.henribambangs.kapronpetshop.Util.ServerAPI;
 import com.squareup.picasso.Picasso;
 
 import java.net.MalformedURLException;
@@ -77,11 +78,9 @@ public class AdapterProductCategory extends RecyclerView.Adapter<AdapterProductC
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent update = new Intent(context, DashboardActivity.class);
-                    update.putExtra("idCategory", md.getId());
-                    update.putExtra("productNameCategory", md.getName());
 
-                    context.startActivity(update);
+                    String newURL = ServerAPI.URL_PRODUCTLIST + "?kategori=" + md.getId();
+                    DashboardActivity.setURL(newURL);
                 }
             });
         }

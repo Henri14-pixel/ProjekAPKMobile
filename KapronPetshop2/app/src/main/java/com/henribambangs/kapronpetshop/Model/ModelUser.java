@@ -2,12 +2,12 @@ package com.henribambangs.kapronpetshop.Model;
 
 public class ModelUser {
     private int customer_id;
-    private String login_id, customer_name, email, gender, address, phone_number, customer_image, province_id, city_id, subdistrict_id, province_name, city_name, subdistrict_name;
+    private String login_id, login_pw, customer_name, email, gender, address, phone_number, customer_image, province_id, city_id, subdistrict_id, province_name, city_name, subdistrict_name;
 
     public ModelUser() {
     }
 
-    public ModelUser(int customer_id, String login_id, String customer_name, String email, String gender, String address, String phone_number, String customer_image, String province_id, String city_id, String subdistrict_id, String province_name, String city_name, String subdistrict_name) {
+    public ModelUser(int customer_id, String login_id, String customer_name, String email, String gender, String address, String phone_number, String customer_image, String province_id, String city_id, String subdistrict_id, String province_name, String city_name, String subdistrict_name, String login_pw) {
         this.customer_id = customer_id;
         this.login_id = login_id;
         this.customer_name = customer_name;
@@ -22,6 +22,7 @@ public class ModelUser {
         this.province_name = province_name;
         this.city_name = city_name;
         this.subdistrict_name = subdistrict_name;
+        this.login_pw = login_pw;
     }
 
     //--------------------------------//
@@ -148,6 +149,15 @@ public class ModelUser {
 
     public void setSubdistrict_name(String subdistrict_name) {
         this.subdistrict_name = subdistrict_name;
+    }
+
+    //--------------------------------//
+    public String getLogin_pw() {
+        return login_pw;
+    }
+
+    public void setLogin_pw(String login_pw) {
+        this.login_pw = login_pw;
     }
 }
 

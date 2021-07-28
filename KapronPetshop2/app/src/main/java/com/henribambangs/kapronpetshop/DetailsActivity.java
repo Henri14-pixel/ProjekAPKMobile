@@ -44,6 +44,7 @@ public class DetailsActivity extends AppCompatActivity {
     ProgressDialog pd;
     private String intent_idProduct, intent_stok;
     private ModelUser user;
+    private boolean addStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +91,9 @@ public class DetailsActivity extends AppCompatActivity {
         kategori.setText("Kategori\t\t: " + intent_kategori);
         berat.setText("Berat\t\t\t\t\t: " + intent_berat + "gr");
         if (Integer.parseInt(intent_stok) == 0) {
-            stok.setText(Html.fromHtml("Stok\t\t\t\t\t: " + "<font color=red>" + "Habis!" + "</font>"));
+            stok.setText(Html.fromHtml("Stok : " + "<font color=red>" + "Habis!" + "</font>"));
         } else {
-            stok.setText("Stok\t\t\t\t\t: " + intent_stok);
+            stok.setText("Stok : " + intent_stok);
         }
         if (intent_deskripsi.isEmpty()) {
             deskripsi.setText("Tidak Ada Deskripsi....");
@@ -116,7 +117,18 @@ public class DetailsActivity extends AppCompatActivity {
         btnKeranjang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addToCart();
+                // Check user Login
+                if (!AdapterUser.getInstance(DetailsActivity.this).isLoggedIn()) {
+                    Toast.makeText(
+                            DetailsActivity.this,
+                            "Silahkan login terlebih dahulu!",
+                            Toast.LENGTH_SHORT
+                    ).show();
+                    finish();
+                    startActivity(new Intent(DetailsActivity.this, LoginActivity.class));
+                } else {
+                    addToCart();
+                }
             }
         });
 
@@ -124,9 +136,22 @@ public class DetailsActivity extends AppCompatActivity {
         btnBeli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addToCart();
-                finish();
-                startActivity(new Intent(DetailsActivity.this, CartActivity.class));
+                // Check user Login
+                if (!AdapterUser.getInstance(DetailsActivity.this).isLoggedIn()) {
+                    Toast.makeText(
+                            DetailsActivity.this,
+                            "Silahkan login terlebih dahulu!",
+                            Toast.LENGTH_SHORT
+                    ).show();
+                    finish();
+                    startActivity(new Intent(DetailsActivity.this, LoginActivity.class));
+                } else {
+                    addToCart();
+                    if (addStatus) {
+                        finish();
+                        startActivity(new Intent(DetailsActivity.this, CartActivity.class));
+                    }
+                }
             }
         });
     }
@@ -140,14 +165,16 @@ public class DetailsActivity extends AppCompatActivity {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             // window.setStatusBarColor(Color.TRANSPARENT);
-            window.setStatusBarColor(getResources().getColor(R.color.light));
+            window.setStatusBarColor(getResources().getColor(R.color.white));
         }
     }
 
     private void addToCart() {
         if (Integer.parseInt(intent_stok) <= 0) {
             Toast.makeText(getApplicationContext(), Html.fromHtml("<font color='#dc3545'>Maaf stok produk ini habis</font>"), Toast.LENGTH_SHORT).show();
+            addStatus = false;
         } else {
+            addStatus = true;
             pd.setMessage("Sedang menambahkan barang ke keranjang");
             pd.setCancelable(false);
             pd.show();
@@ -163,7 +190,7 @@ public class DetailsActivity extends AppCompatActivity {
                                 if (res.getBoolean("success")) {
                                     Toast.makeText(getApplicationContext(), "Pesan : " + res.getString("message"), Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Pesan : " + Html.fromHtml("<font color='#dc3545'>"+res.getString("message")+"</font>"), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Pesan : " + Html.fromHtml("<font color='#dc3545'>" + res.getString("message") + "</font>"), Toast.LENGTH_SHORT).show();
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
