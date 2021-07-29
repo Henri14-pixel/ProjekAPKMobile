@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
@@ -15,6 +16,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,9 +26,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.henribambangs.kapronpetshop.Adapter.AdapterPaymentMethod;
 import com.henribambangs.kapronpetshop.Adapter.AdapterProductCart;
 import com.henribambangs.kapronpetshop.Adapter.AdapterProductList;
 import com.henribambangs.kapronpetshop.Adapter.AdapterUser;
+import com.henribambangs.kapronpetshop.Model.ModelPaymentMethod;
 import com.henribambangs.kapronpetshop.Model.ModelProductCart;
 import com.henribambangs.kapronpetshop.Model.ModelProductCategory;
 import com.henribambangs.kapronpetshop.Model.ModelProductList;
@@ -48,17 +52,19 @@ import java.util.Map;
 
 public class CartActivity extends AppCompatActivity {
 
-    RecyclerView mRecyclerview;
-    RecyclerView.Adapter mAdapter;
-    RecyclerView.LayoutManager mManager;
+    RecyclerView mRecyclerview, mRecyclerviewPayment;
+    RecyclerView.Adapter mAdapter, mAdapterPayment;
+    RecyclerView.LayoutManager mManager, mManagerPayment;
     List<ModelProductCart> mItems;
+    List<ModelPaymentMethod> mItemsPayment;
     ProgressDialog pd;
     EditText amount;
-    private static String URL;
+    private static String URL, paymentID;
     private ModelUser user;
     TextView name, phone, address, area;
     ImageView profile;
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,6 +133,21 @@ public class CartActivity extends AppCompatActivity {
         mRecyclerview.setLayoutManager(mManager);
         mAdapter = new AdapterProductCart(CartActivity.this, mItems);
         mRecyclerview.setAdapter(mAdapter);
+
+        // Recyclerview Payment Method
+        mRecyclerviewPayment = findViewById(R.id.recyclerviewTempPayment);
+        mItemsPayment = new ArrayList<>();
+
+        loadPaymentMethod();
+
+        mManagerPayment = new LinearLayoutManager(
+                CartActivity.this, LinearLayoutManager.VERTICAL, false
+        );
+
+        mRecyclerviewPayment.setLayoutManager(mManagerPayment);
+        mAdapterPayment = new AdapterPaymentMethod(CartActivity.this, mItemsPayment);
+        mRecyclerviewPayment.setAdapter(mAdapterPayment);
+
     }
 
     public void backHome(View view) {
@@ -201,5 +222,61 @@ public class CartActivity extends AppCompatActivity {
         };
 
         AppController.getInstance().addToRequestQueue(reqData);
+    }
+
+    private void loadPaymentMethod() {
+        pd.setMessage("Sedang Memuat Metode Pembayaran");
+        pd.setCancelable(false);
+        pd.show();
+
+        mItemsPayment.clear();
+
+        StringRequest reqData = new StringRequest(Request.Method.POST, ServerAPI.URL_PAYMENTMETHOD,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        pd.cancel();
+                        try {
+                            JSONArray jsonArray = new JSONArray(response);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                try {
+                                    JSONObject data = jsonArray.getJSONObject(i);
+                                    ModelPaymentMethod md = new ModelPaymentMethod();
+                                    md.setPayment_method_id(data.getString("payment_method_id"));
+                                    md.setPayment_method_image(data.getString("payment_method_image"));
+                                    md.setPayment_method_name(data.getString("payment_method_name"));
+                                    mItemsPayment.add(md);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        } catch (JSONException e2) {
+                            e2.printStackTrace();
+                        }
+
+                        mAdapterPayment.notifyDataSetChanged();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        pd.cancel();
+                        Log.d("volley", "error : " + error.getMessage());
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+//                map.put("customer_id", String.valueOf(user.getCustomer_id()));
+
+                return map;
+            }
+        };
+
+        AppController.getInstance().addToRequestQueue(reqData);
+    }
+
+    public static void setPaymentID(String id){
+        paymentID = id;
     }
 }
