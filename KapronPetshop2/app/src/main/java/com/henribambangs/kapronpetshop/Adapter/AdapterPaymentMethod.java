@@ -27,6 +27,7 @@ import java.util.List;
 public class AdapterPaymentMethod extends RecyclerView.Adapter<AdapterPaymentMethod.HolderData> {
     private List<ModelPaymentMethod> mItems;
     private Context context;
+    private int index = -1;
 
     public AdapterPaymentMethod(Context context, List<ModelPaymentMethod> items) {
         this.mItems = items;
@@ -47,6 +48,23 @@ public class AdapterPaymentMethod extends RecyclerView.Adapter<AdapterPaymentMet
     public void onBindViewHolder(AdapterPaymentMethod.HolderData holder, int position) {
         ModelPaymentMethod md = mItems.get(position);
         holder.tvname.setText(md.getPayment_method_name());
+
+        // Radio Button Listener
+        holder.rb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    index = position;
+                    notifyDataSetChanged();
+                }
+            }
+        });
+
+        if (index == position) {
+            holder.rb.setChecked(true);
+        } else {
+            holder.rb.setChecked(false);
+        }
 
         // Image
         URL url = null;
