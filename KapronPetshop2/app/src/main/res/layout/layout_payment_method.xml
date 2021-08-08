@@ -61,7 +61,7 @@
                     android:id="@+id/cartPaymentRB"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:gravity="end|center_vertical" />
+                    android:gravity="end|center_vertical"/>
             </LinearLayout>
 
         </LinearLayout>

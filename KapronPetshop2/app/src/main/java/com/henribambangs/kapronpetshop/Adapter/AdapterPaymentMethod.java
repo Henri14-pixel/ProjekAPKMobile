@@ -1,6 +1,7 @@
 package com.henribambangs.kapronpetshop.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.henribambangs.kapronpetshop.CartActivity;
 import com.henribambangs.kapronpetshop.DashboardActivity;
+import com.henribambangs.kapronpetshop.DetailsActivity;
 import com.henribambangs.kapronpetshop.Model.ModelPaymentMethod;
 import com.henribambangs.kapronpetshop.R;
 import com.henribambangs.kapronpetshop.Util.ServerAPI;
@@ -77,6 +79,8 @@ public class AdapterPaymentMethod extends RecyclerView.Adapter<AdapterPaymentMet
                 .load(String.valueOf(url))
                 .into(holder.ivimage);
 
+        holder.rb.setFocusable(false);
+
         holder.md = md;
     }
 
@@ -100,14 +104,18 @@ public class AdapterPaymentMethod extends RecyclerView.Adapter<AdapterPaymentMet
             rg = view.findViewById(R.id.cartPaymentRG);
             rb = view.findViewById(R.id.cartPaymentRB);
 
+            rb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String id = md.getPayment_method_id();
+                    CartActivity.setPaymentID(id);
+                }
+            });
+
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (rb.isChecked()) {
-                        rb.setChecked(false);
-                    } else {
-                        rb.setChecked(true);
-                    }
+                    rb.setChecked(true);
                     String id = md.getPayment_method_id();
                     CartActivity.setPaymentID(id);
                 }

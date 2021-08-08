@@ -82,11 +82,13 @@
 
                         <EditText
                             android:id="@+id/productTotalCart"
-                            android:layout_width="40dp"
+                            android:layout_width="45dp"
                             android:layout_height="match_parent"
                             android:text="2,687"
                             android:layout_marginVertical="1dp"
                             android:layout_marginEnd="1dp"
+                            android:maxLines="1"
+                            android:imeOptions="actionDone"
                             android:inputType="number"
                             android:textColor="@color/gray_900"
                             android:textSize="14sp"
@@ -102,17 +104,12 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/ic_baseline_remove_circle_outline_24" />
-
                         <TextView
+                            android:id="@+id/cartHapus"
                             android:layout_width="wrap_content"
                             android:layout_height="20dp"
-                            android:text="Hapus"
+                            android:text=" Hapus"
+                            android:drawableLeft="@drawable/ic_baseline_remove_circle_outline_24"
                             android:textColor="@color/bootstrap_red">
 
                         </TextView>
